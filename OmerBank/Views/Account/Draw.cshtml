@@ -1,0 +1,24 @@
+﻿@model Account;
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="name" class="control-label">Çekmek istediğiniz para birimini seçiniz</label>
+        <select id="name" name="name" class="form-control">
+            <option value="">Bir para birimi seçin</option>
+            @foreach (var kind in Model.Kinds)
+            {
+                <option value="@kind.Name">@kind.Name</option>
+            }
+        </select>
+        <span class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="amount" class="control-label">Çekmek istediğiniz miktarı giriniz</label>
+        <input id="amount" name="amount" class="form-control" />
+        <span class="text-danger"></span>
+    </div>
+    <div class="form-group mt-3">
+        <input type="submit" value="Çek" class="btn btn-primary" />
+    </div>
+</form>

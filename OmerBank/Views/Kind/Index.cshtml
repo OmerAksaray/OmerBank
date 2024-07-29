@@ -1,0 +1,21 @@
+﻿@model Kind
+
+
+
+<h2>Başka Döviz Hesabı</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="name" class="control-label">Hedef para birimini seçiniz</label>
+        <select id="name" name="name" class="form-control">
+            <option value="DOLAR">DOLAR</option>
+            <option value="EURO">EURO</option>     
+            <option value="RUBLE">RUBLE</option>
+        </select>
+        <span class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <input type="submit" value="Hesap Başvursu" class="btn btn-primary" />
+    </div>
+</form>

@@ -1,0 +1,20 @@
+﻿@model Account;
+
+<div>
+    <h2>Hesap Bilgileri</h2>
+
+    <h3>IBAN Bilgisi</h3>
+    <p>@Model.IBAN</p>
+    @if (Model.Kinds != null && Model.Kinds.Any())
+    {
+        @foreach (var name in Model.Kinds)
+        {
+            <h1>@name.Name</h1>
+            <p>@name.Money</p>
+        }
+    }
+    else
+    {
+        <p>Kind bilgisi bulunamadı.</p>
+    }
+</div>

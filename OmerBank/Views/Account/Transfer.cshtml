@@ -1,0 +1,34 @@
+﻿@model Account
+
+@{
+    ViewData["Title"] = "Para Transferi";
+}
+
+<h2>Para Transferi</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="transferIban" class="control-label">Parayı Transfer Edeceğiniz Kişinin Ibanını Giriniz</label>
+        <input id="transferIban" name="transferIban" class="form-control" />
+        <span class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="name" class="control-label">Göndermek istediğiniz para birimini seçiniz</label>
+        <select id="name" name="name" class="form-control">
+            <option value="">Bir isim seçin</option>
+            @foreach (var kind in Model.Kinds)
+            {
+                <option value="@kind.Name">@kind.Name</option>
+            }
+        </select>
+        <span class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="amount" class="control-label">Transfer etmek istediğiniz miktarı giriniz</label>
+        <input id="amount" name="amount" class="form-control" />
+        <span class="text-danger"></span>
+    </div>
+    <div class="form-group mt-3">
+        <input type="submit" value="Transfer" class="btn btn-primary" />
+    </div>
+</form>
